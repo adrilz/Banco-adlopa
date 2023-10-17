@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/iniSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_vertical"
+        android:layout_marginStart="@dimen/common_padding_horizontal"
+        android:layout_marginEnd="@dimen/common_padding_horizontal"
+        android:text="@string/inicio"
+        android:textAlignment="center"
+        style="@style/MaterialAlertDialog.Material3.Title.Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/user"
+        app:helperText="@string/required"
+        android:layout_marginTop="@dimen/common_padding_vertical"
+        android:layout_marginStart="@dimen/common_padding_horizontal"
+        android:layout_marginEnd="@dimen/common_padding_horizontal"
+        app:endIconMode="clear_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/iniSesion"
+        app:layout_constraintEnd_toEndOf="@id/iniSesion"
+        app:layout_constraintTop_toBottomOf="@id/iniSesion">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pass"
+        app:helperText="@string/required"
+        android:layout_marginTop="@dimen/common_padding_vertical"
+        android:layout_marginStart="@dimen/common_padding_horizontal"
+        android:layout_marginEnd="@dimen/common_padding_horizontal"
+        app:endIconMode="password_toggle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/usuario"
+        app:layout_constraintEnd_toEndOf="@id/usuario"
+        app:layout_constraintTop_toBottomOf="@id/usuario">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/common_padding_boton"
+        android:paddingRight="@dimen/common_padding_boton"
+        android:text="@string/entrar"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="@dimen/common_padding_min"
+        app:layout_constraintStart_toStartOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/common_padding_boton"
+        android:paddingRight="@dimen/common_padding_boton"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:text="@string/salir"
+        app:layout_constraintEnd_toEndOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
