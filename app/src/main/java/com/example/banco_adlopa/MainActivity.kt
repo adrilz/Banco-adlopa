@@ -15,5 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.dniUser.setText(intent.getStringExtra("usuario"))
+
+        binding.btnExit.setOnClickListener {
+            val intent = Intent(this, WelcomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

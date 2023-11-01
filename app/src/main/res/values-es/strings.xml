@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Banco-adlopa</string>
+    <string name="boton_bank">boton_bank</string>
+    <string name="card_title">Bienvenido/a</string>
+    <string name="DNI">DNI</string>
+    <string name="inicio">Iniciar Sesión</string>
+    <string name="user">Introduce el usuario</string>
+    <string name="pass">Introduce la contraseña</string>
+    <string name="required">Obligatorio</string>
+    <string name="entrar">Entrar</string>
+    <string name="salir">Salir</string>
+    <string name="btnGlobal">POSICION GLOBAL</string>
+    <string name="btnMoves">MOVIMIENTOS</string>
+    <string name="btnTransfer">TRANSFERENCIAS</string>
+    <string name="btnChangePass">CAMBIAR CONTRASEÑA</string>
+    <string name="btnPromo">PROMOCIONES</string>
+    <string name="btnBox">CAJEROS</string>
+    <string name="btnExit">SALIR</string>
+    <string name="welcome">Bienvenido/a a mi banco</string>
+
+</resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAnimationMode="slide"
+        app:navigationIcon="@drawable/ic_menu">
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_boton_bank"
+        android:contentDescription="@string/boton_bank"
+        app:layout_anchor="@id/bottomAppBar">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <!-- LINEAR LAYOUT PARA EL MENSAJE DE BIENVENIDA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            android:layout_marginBottom="@dimen/common_padding_min"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:layout_marginStart="@dimen/common_padding_min"
+                android:layout_marginEnd="@dimen/common_padding_min">
+
+                <ImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="@dimen/card_img_size"
+                    android:layout_height="@dimen/card_img_size"
+                    android:src="@mipmap/ic_avatar_foreground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:text="@string/card_title"
+                    style="@style/EstiloTexto"
+                    app:layout_constraintStart_toEndOf="@id/imgAvatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/dni_user"
+                    android:text="@string/DNI"
+                    style="@style/EstiloTexto"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="@id/title"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- LINEAR LAYOUT PARA LA LISTA DE BOTONES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            app:cardBackgroundColor="#00FFFFFF">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:layout_marginEnd="@dimen/common_padding_min"
+                android:paddingBottom="@dimen/common_padding_min">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:stretchColumns="*"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnGlobal"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnGlobal"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_global"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnMoves"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnMoves"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_moves"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnGlobal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnTransfer"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnTransfer"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_transfer"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnMoves" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnChangePass"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnChangePass"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_change_pass"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnTransfer" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPromo"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnPromo"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_promo"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnChangePass" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBox"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnBox"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_box"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnPromo" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnExit"
+                            android:layout_marginStart="@dimen/common_padding_min"
+                            android:layout_marginEnd="@dimen/common_padding_min"
+                            android:text="@string/btnExit"
+                            style="@style/EstiloBotonesLand"
+                            app:icon="@drawable/ic_exit"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnBox" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

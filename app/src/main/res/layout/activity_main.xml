@@ -8,11 +8,11 @@
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:navigationIcon="@drawable/ic_menu"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
+        app:navigationIcon="@drawable/ic_menu">
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -52,31 +52,100 @@
                     android:layout_width="@dimen/card_img_size"
                     android:layout_height="@dimen/card_img_size"
                     android:src="@mipmap/ic_avatar_foreground"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:text="@string/card_title"
-                    android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@id/imgAvatar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/card_title"
+                    style="@style/EstiloTexto"
                     />
                 <TextView
                     android:id="@+id/dni_user"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:text="@string/DNI"
-                    android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintEnd_toEndOf="@id/title"
                     app:layout_constraintTop_toBottomOf="@id/title"
+                    android:text="@string/DNI"
+                    style="@style/EstiloTexto"
                     />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- LINEAR LAYOUT PARA LA LISTA DE BOTONES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:layout_marginStart="@dimen/common_padding_min"
+                android:layout_marginEnd="@dimen/common_padding_min"
+                android:paddingBottom="@dimen/common_padding_min">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGlobal"
+                    android:text="@string/btnGlobal"
+                    app:icon="@drawable/ic_global"
+                    style="@style/EstiloBotones"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMoves"
+                    android:text="@string/btnMoves"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_moves"
+                    app:layout_constraintTop_toBottomOf="@id/btnGlobal"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTransfer"
+                    android:text="@string/btnTransfer"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_transfer"
+                    app:layout_constraintTop_toBottomOf="@id/btnMoves"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangePass"
+                    android:text="@string/btnChangePass"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_change_pass"
+                    app:layout_constraintTop_toBottomOf="@id/btnTransfer"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPromo"
+                    android:text="@string/btnPromo"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_promo"
+                    app:layout_constraintTop_toBottomOf="@id/btnChangePass"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBox"
+                    android:text="@string/btnBox"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_box"
+                    app:layout_constraintTop_toBottomOf="@id/btnPromo"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExit"
+                    android:text="@string/btnExit"
+                    style="@style/EstiloBotones"
+                    app:icon="@drawable/ic_exit"
+                    app:layout_constraintTop_toBottomOf="@id/btnBox"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

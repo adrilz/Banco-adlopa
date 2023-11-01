@@ -2,12 +2,10 @@ package com.example.banco_adlopa
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import com.example.banco_adlopa.databinding.ActivityLoginBinding
-import com.google.android.material.textfield.TextInputEditText
 
 class LoginActivity : AppCompatActivity() {
 
@@ -30,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
             if(comprobarDni(usuario) && comprobarPass(pass)) {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("usuario", usuario)
+                intent.putExtra("password",pass)
                 startActivity(intent)
             }
             else {
