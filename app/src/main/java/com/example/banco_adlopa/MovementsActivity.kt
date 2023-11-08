@@ -31,28 +31,32 @@ class MovementsActivity : AppCompatActivity() {
         //Conecta con la BD
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
         //Recuperar el valor del cliente
-        var clienteLog = intent.getSerializableExtra("Cliente") as Cliente
+        val clienteLog = intent.getSerializableExtra("Cliente") as Cliente
 
         //Obtiene el metodo getCuentas del cliente logueado que esta en CuentaDAO
-        var listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(clienteLog) as ArrayList<Cuenta>
+        val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(clienteLog) as ArrayList<Cuenta>
 
-        var listaNumerosCuenta =  ArrayList<String>()
-        var index = 0
+        val listaCuentasSpin =  ArrayList<String>()
 
-        while(index < listaCuentas.size){
+        //Bucle forEach para recorrer las cuentas
+        listaCuentas.forEach()
+        {
+            //Recoge en un string la informacion de la cuenta que queremos
+            val cuentaCompleta :String = it.getBanco().toString()+"-"+
+                    it.getSucursal().toString()+"-"+it.getDc().toString()+"-"+
+                    it.getNumeroCuenta().toString()
+
+            //Se añade al nuevo array de strings para el spiner la informacion de las cuentas
+            listaCuentasSpin.add(cuentaCompleta)
+        }
+
             //Pone todos los valores que se usan en el numero de cuenta en una misma frase
-            var cuentaCompleta :String = listaCuentas.get(index).getBanco().toString()+"-"+
-                    listaCuentas.get(index).getSucursal().toString()+"-"+listaCuentas.get(index).getDc().toString()+"-"+
-                    listaCuentas.get(index).getNumeroCuenta().toString()
 
             //añade la informacion a un nuevo array de strings
-            listaNumerosCuenta.add(cuentaCompleta)
-            index++
-        }
 
 
         //Se usa el array de strings creado en el bucle anterior para el spinner
-        val adapterSpin = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaNumerosCuenta)
+        val adapterSpin = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaCuentasSpin)
 
         val spinner = binding.selecCuenta
 
@@ -67,7 +71,7 @@ class MovementsActivity : AppCompatActivity() {
         // Manejar la selección de elementos del Spinner
         spinner.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var listaMovimientos: ArrayList<Movimiento> = mbo?.getMovimientos(listaCuentas?.get(position)) as ArrayList<Movimiento>
+                val listaMovimientos: ArrayList<Movimiento> = mbo.getMovimientos(listaCuentas.get(position)) as ArrayList<Movimiento>
 
                 movementsAdapter = MovementsAdapter(listaMovimientos)
 
