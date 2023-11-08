@@ -3,14 +3,12 @@ package com.example.banco_adlopa
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-
 import androidx.appcompat.app.AppCompatActivity
+import com.example.banco_adlopa.bd.MiBancoOperacional
 import com.example.banco_adlopa.databinding.ActivityLoginBinding
+import com.example.banco_adlopa.pojo.Cliente
 
 class LoginActivity : AppCompatActivity() {
-
-    private var usuario: String? = null
-    private var pass: String? = null
 
     private  lateinit var  binding: ActivityLoginBinding
 
@@ -22,19 +20,22 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btnEntrar.setOnClickListener {
-            usuario = binding.editUser.text.toString()
-            pass = binding.editPass.text.toString()
+            val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
 
-            if(comprobarDni(usuario) && comprobarPass(pass)) {
+            // Introducimos los datos como si fuera la pantalla inicial
+            var cliente = Cliente()
+            cliente.setNif(binding.editUser.text.toString())
+            cliente.setClaveSeguridad(binding.editPass.text.toString())
+
+
+            // Logueamos al cliente
+            val clienteLogeado = mbo?.login(cliente) ?: -1
+            if(clienteLogeado== -1) {
+                Toast.makeText(this,"El cliente no existe en la base de datos", Toast.LENGTH_LONG).show()
+            }else{
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("usuario", usuario)
-                intent.putExtra("password",pass)
+                intent.putExtra("Cliente", clienteLogeado)
                 startActivity(intent)
-            }
-            else {
-                val mensaje: String = "Usuario o contraseña introducidos incorrectos"
-                Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
-
             }
         }
 

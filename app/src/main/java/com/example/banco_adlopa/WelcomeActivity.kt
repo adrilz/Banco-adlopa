@@ -7,9 +7,6 @@ import com.example.banco_adlopa.databinding.WelcomeActivityBinding
 
 class WelcomeActivity : AppCompatActivity() {
 
-    private var usuario: String? = null
-    private var pass: String? = null
-
     private lateinit var binding: WelcomeActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

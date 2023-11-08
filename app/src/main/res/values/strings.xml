@@ -17,4 +17,18 @@
     <string name="btnBox">CASHIER</string>
     <string name="btnExit">EXIT</string>
     <string name="welcome">Welcome to my bank</string>
+    <string name="cuentaPropia">Cuenta Propia</string>
+    <string name="mensajeCuentaAjena">Escribe el num. cuenta ajena</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="send">Enviar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="lblJusti">Enviar justificante</string>
+    <string name="lblElige">Elige tu cuenta;</string>
+    <string name="cuentaAjena">Cuenta Ajena</string>
+    <string name="title_Global">Posición Global</string>
+    <string name="lblCuenta">Cuenta:</string>
+    <string name="descImg">imagen Cuenta</string>
+    <string name="title_Movs">Movimientos</string>
+    <string name="lbl_selCuenta">Selecciona la cuenta:</string>
+    <string name="last_movs">Últimos movimientos:</string>
 </resources>

@@ -65,7 +65,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     />
                 <TextView
-                    android:id="@+id/dni_user"
+                    android:id="@+id/dniUser"
                     android:text="@string/DNI"
                     style="@style/EstiloTexto"
                     app:layout_constraintStart_toStartOf="@id/title"

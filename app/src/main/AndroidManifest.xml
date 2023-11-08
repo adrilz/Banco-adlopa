@@ -29,6 +29,7 @@
 
         </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -37,6 +38,34 @@
 
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".TransferActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".GlobalPositionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MovementsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
